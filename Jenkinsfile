@@ -4,9 +4,9 @@ pipeline {
                 PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
 
                 // Define Docker Hub credentials ID
-                DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
+                DOCKERHUB_CREDENTIALS_ID = 'Docker_Miro_Hub'
                 // Define Docker Hub repository name
-                DOCKERHUB_REPO = 'amirdirin/week6_livedemo_sep4'
+                DOCKERHUB_REPO = 'Miro193/Lecca_tutorial_Week6'
                 // Define Docker image tag
                 DOCKER_IMAGE_TAG = 'latest'
             }
@@ -53,7 +53,7 @@ pipeline {
             stage('Push Docker Image to Docker Hub') {
                  steps {
                       withCredentials([usernamePassword(credentialsId: "${DOCKERHUB_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                           bat '''
+                           sh '''
                                docker login -u %DOCKER_USER% -p %DOCKER_PASS%
                                docker push %DOCKERHUB_REPO%:%DOCKER_IMAGE_TAG%
                                '''

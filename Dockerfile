@@ -1,5 +1,5 @@
 FROM maven:latest
-LABEL authors=""
+LABEL authors="miroval"
 
 WORKDIR /app
 COPY pom.xml /app
