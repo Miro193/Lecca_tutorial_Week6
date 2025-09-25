@@ -6,7 +6,7 @@ pipeline {
                 // Define Docker Hub credentials ID
                 DOCKERHUB_CREDENTIALS_ID = 'Docker_Miro_Hub'
                 // Define Docker Hub repository name
-                DOCKERHUB_REPO = 'Miro193/Lecca_tutorial_Week6'
+                DOCKERHUB_REPO = 'miro193/lecca_tutorial_Week6'
                 // Define Docker image tag
                 DOCKER_IMAGE_TAG = 'latest'
             }
@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage ('checking') {
             steps {
-                git branch: 'main', url: 'https://github.com/miro193/lecca_tutorial_Week6.git'
+                git branch: 'main', url: 'https://github.com/Miro193/Lecca_tutorial_Week6.git'
                 }
             }
         stage ('build') {
