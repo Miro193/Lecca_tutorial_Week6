@@ -6,7 +6,7 @@ pipeline {
                 // Define Docker Hub credentials ID
                 DOCKERHUB_CREDENTIALS_ID = 'Docker_Miro_Hub'
                 // Define Docker Hub repository name
-                DOCKERHUB_REPO = 'miro193/lecca_tutorial_Week6'
+                DOCKERHUB_REPO = 'miro193/lecca_tutorial_week6'
                 // Define Docker image tag
                 DOCKER_IMAGE_TAG = 'latest'
             }
