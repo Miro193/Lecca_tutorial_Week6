@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-                PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
+                PATH = "/usr/local/bin:${env.PATH}"
 
                 // Define Docker Hub credentials ID
                 DOCKERHUB_CREDENTIALS_ID = 'Docker_Miro_Hub'
@@ -46,7 +46,7 @@ pipeline {
             }
             stage('Build Docker Image') {
                   steps {
-                      sh 'docker build -t %DOCKERHUB_REPO%:%DOCKER_IMAGE_TAG% .'
+                      sh 'docker build -t $DOCKERHUB_REPO:$DOCKER_IMAGE_TAG .'
                       }
                  }
 
@@ -54,8 +54,8 @@ pipeline {
                  steps {
                       withCredentials([usernamePassword(credentialsId: "${DOCKERHUB_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                            sh '''
-                               docker login -u %DOCKER_USER% -p %DOCKER_PASS%
-                               docker push %DOCKERHUB_REPO%:%DOCKER_IMAGE_TAG%
+                               docker login -u $DOCKER_USER -p $DOCKER_PASS
+                               docker push €DOCKERHUB_REPO:$DOCKER_IMAGE_TAG
                                '''
                            }
                       }
