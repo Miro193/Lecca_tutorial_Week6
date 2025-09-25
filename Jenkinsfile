@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage ('checking') {
             steps {
-                git branch: 'main', url: 'https://github.com/Miro193/Lecca_tutorial_Week6.git'
+                git branch: 'main', url: 'https://github.com/miro193/lecca_tutorial_Week6.git'
                 }
             }
         stage ('build') {
