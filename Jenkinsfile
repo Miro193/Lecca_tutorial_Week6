@@ -4,9 +4,9 @@ pipeline {
                 PATH = "/usr/local/bin:${env.PATH}"
 
                 // Define Docker Hub credentials ID
-                DOCKERHUB_CREDENTIALS_ID = 'Docker_Miro2_Hub'
+                DOCKERHUB_CREDENTIALS_ID = 'Docker_Miro_Hub'
                 // Define Docker Hub repository name
-                DOCKERHUB_REPO = 'miro193/lecca_tutorial_week6'
+                DOCKERHUB_REPO = 'miroval/lecca_tutorial_week6'
                 // Define Docker image tag
                 DOCKER_IMAGE_TAG = 'latest'
             }
